@@ -218,7 +218,7 @@
         <textarea id="description" name="description"></textarea>
       </div>
 
-      <input type="submit" value="Submit Registration" class="btn-submit">
+      <input type="submit" id="submitBtn" value="Submit Registration" class="btn-submit">
 
       <div class="button-container">
         <button type="button" onclick="openProducts()">Products</button>
@@ -260,6 +260,10 @@
   function openEstimation() {
     window.location.href = "estimator/estimator.html";
   }
+
+  document.getElementById('submitBtn').addEventListener('click', function(event) {
+    alert("You are successfully registered! Our team will contact you soon.");
+  });
 </script>
 </body>
 </html>
