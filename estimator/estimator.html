@@ -183,13 +183,15 @@ function calculate() {
 
 function goBack() {
   // Hide results and show form again
+  
   document.getElementById('results').classList.add('hidden');
   document.getElementById('estimatorForm').classList.remove('hidden');
 }
 //main button to go back to the main website
 function Back() {
-  window.location.href = "C:\\Users\\hemanth\\OneDrive\\Desktop\\Salesforce\\SolarPulse Project\\SolarPulse\\force-app\\main\\default\\websites\\ledwebsite.html"; // Replace with your target website URL
+  window.location.href = "https://hemasundar784.github.io/Solarpulse-website/"; // Replace with your target website URL
 }
+
 
 function downloadPDF() {
   const data = window.estimationData;
@@ -202,7 +204,7 @@ function downloadPDF() {
   const doc = new jsPDF();
 
   const img = new Image();
-  img.src = "logo.png"; // Must be located in the same directory
+  img.src = "images\logo.png"; // Must be located in the same directory
 
   const generatePDFContent = () => {
     doc.setFontSize(16);
