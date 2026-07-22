@@ -14,7 +14,12 @@
   margin: 0;
   padding: 0;
 }
-
+.logo {
+  max-width: 120px;   /* keeps it small */
+  height: auto;       /* maintains aspect ratio */
+  display: block;     /* ensures it behaves like a block element */
+  margin: 0 auto 10px; /* centers it horizontally and adds spacing below */
+}
 header {
   background: #0070d2;
   background: linear-gradient(to right, #0943a8, #00bcd4);
@@ -194,7 +199,7 @@ function goBack() {
 }
 //main button to go back to the main website
 function back() {
-  window.location.href = "https://hemasundar784.github.io/Solarpulse-website/"; // Replace with your target website URL
+  window.location.href = "../index.html"; // Replace with your target website URL
 }
 
 
@@ -209,7 +214,7 @@ function downloadPDF() {
   const doc = new jsPDF();
 
   const img = new Image();
-  img.src = "images\logo.png"; // Must be located in the same directory
+  img.src = "../images/logo.png"; // Must be located in the same directory
 
   const generatePDFContent = () => {
     doc.setFontSize(16);
@@ -243,13 +248,14 @@ function downloadPDF() {
   };
 }
   </script>
-  <header>
-    <div class="company-header">
-    <img src="images/logo.png" alt="Company Logo" class="logo">
-    <h1 class="company-name">SolarPulse Energy</h1>
-</div>
-    <h1>Solar Quotation Estimator</h1>
-  </header>
+      <header>
+      <div class="company-header">
+        <img src="../images/logo.png" alt="Company Logo" class="logo">
+        <h1 class="company-name">SolarPulse Energy</h1>
+      </div>
+      <h1>Solar Quotation Estimator</h1>
+    </header>
+
 
   <main>
     <!-- Form View -->
@@ -270,7 +276,7 @@ function downloadPDF() {
       <input type="text" id="phone" placeholder="Enter phone number">
 
       <button type="button" onclick="calculate()">Estimate</button>
-      <button type="button" onclick="back()">back</button>
+      <button type="button" onclick="back()">back to registration</button>
     </form>
 
     <!-- Results View -->
