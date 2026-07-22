@@ -14,6 +14,8 @@
   margin: 0;
   padding: 0;
 }
+
+
 .logo {
   max-width: 120px;   /* keeps it small */
   height: auto;       /* maintains aspect ratio */
@@ -26,6 +28,11 @@ header {
   color: white;
   text-align: center;
   padding: 1rem 1rem;
+}
+
+.results-content {
+  text-align: center;
+  /* font-weight: bold; */
 }
 
 main {
@@ -167,17 +174,18 @@ function calculate() {
   const selectedModel = systemModels[modelKey];
 
   // Display details on page
-  document.getElementById('systemModel').innerText = `Selected Model: ${selectedModel.name}`;
-  document.getElementById('capacity').innerText = `Capacity: ${selectedModel.capacity}`;
-  document.getElementById('panels').innerText = `Panel Count: ${selectedModel.panels} Panels`;
-  document.getElementById('cost').innerText = `System Cost: ₹${selectedModel.cost.toLocaleString('en-IN')} (incl. 5% GST)`;
-  document.getElementById('subsidy').innerText = `Govt. Subsidy Eligible: ₹${selectedModel.subsidy.toLocaleString('en-IN')}`;
-  document.getElementById('electricity').innerText = `Generation: ${selectedModel.kwhMonth} kWh/mo (${selectedModel.kwhYear} kWh/yr)`;
-  document.getElementById('monthly').innerText = `Est. Monthly Savings: ₹${selectedModel.monthlySavings.toLocaleString('en-IN')}`;
-  document.getElementById('yearly').innerText = `Est. Annual Savings: ₹${selectedModel.annualSavings.toLocaleString('en-IN')}`;
-  document.getElementById('longTerm').innerText = `25-Year Savings: ₹${selectedModel.savings25Yr.toLocaleString('en-IN')}`;
-  document.getElementById('payback').innerText = `Payback Period: ${selectedModel.payback}`;
-  document.getElementById('roi').innerText = `ROI (25 Years): ${selectedModel.roi}`;
+  document.getElementById('systemModel').innerHTML = `Selected Model: <strong>${selectedModel.name}</strong>`;
+document.getElementById('capacity').innerHTML = `Capacity: <strong>${selectedModel.capacity}</strong>`;
+document.getElementById('panels').innerHTML = `Panel Count: <strong>${selectedModel.panels} Panels</strong>`;
+document.getElementById('cost').innerHTML = `System Cost: <strong>₹${selectedModel.cost.toLocaleString('en-IN')} (incl. 5% GST)</strong>`;
+document.getElementById('subsidy').innerHTML = `Govt. Subsidy Eligible: <strong>₹${selectedModel.subsidy.toLocaleString('en-IN')}</strong>`;
+document.getElementById('electricity').innerHTML = `Generation: <strong>${selectedModel.kwhMonth} kWh/mo (${selectedModel.kwhYear} kWh/yr)</strong>`;
+document.getElementById('monthly').innerHTML = `Est. Monthly Savings: <strong>₹${selectedModel.monthlySavings.toLocaleString('en-IN')}</strong>`;
+document.getElementById('yearly').innerHTML = `Est. Annual Savings: <strong>₹${selectedModel.annualSavings.toLocaleString('en-IN')}</strong>`;
+document.getElementById('longTerm').innerHTML = `25-Year Savings: <strong>₹${selectedModel.savings25Yr.toLocaleString('en-IN')}</strong>`;
+document.getElementById('payback').innerHTML = `Payback Period: <strong>${selectedModel.payback}</strong>`;
+document.getElementById('roi').innerHTML = `ROI (25 Years): <strong>${selectedModel.roi}</strong>`;
+
 
   // Toggle UI visibility
   document.getElementById('estimatorForm').classList.add('hidden');
@@ -281,20 +289,20 @@ function downloadPDF() {
 
     <!-- Results View -->
     <section id="results" class="hidden">
-      <h2>Estimation Results</h2>
+      <h2 class="results-content">Estimation Results</h2>
       
-      <div id="resultsContent">
-        <p id="systemModel"></p>
-        <p id="capacity"></p>
-        <p id="panels"></p>
-        <p id="cost"></p>
-        <p id="subsidy"></p>
-        <p id="electricity"></p>
-        <p id="monthly"></p>
-        <p id="yearly"></p>
-        <p id="longTerm"></p>
-        <p id="payback"></p>
-        <p id="roi"></p>
+      <div id="resultsContent" class="results-content">
+        <p id="systemModel"><strong></strong></p>
+          <p id="capacity"><strong></strong></p>
+          <p id="panels"><strong></strong></p>
+          <p id="cost"><strong></strong></p>
+          <p id="subsidy"><strong></strong></p>
+          <p id="electricity"><strong></strong></p>
+          <p id="monthly"><strong></strong></p>
+          <p id="yearly"><strong></strong></p>
+          <p id="longTerm"><strong></strong></p>
+          <p id="payback"><strong></strong></p>
+          <p id="roi"><strong></strong></p>
       </div>
 
       <div class="button-group">
